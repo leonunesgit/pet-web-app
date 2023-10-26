@@ -1,0 +1,12 @@
+.static-text {
+    position: absolute;
+    top: 75%;
+    text-align: center;
+    width: 100%;
+    font-size: 36px;
+}
+.word-transition {
+    display: inline;
+    overflow: hidden;
+    position: relative;
+}
