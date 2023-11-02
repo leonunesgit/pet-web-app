@@ -3,10 +3,31 @@
     top: 75%;
     text-align: center;
     width: 100%;
-    font-size: 36px;
+    font-size: clamp(14px, 3vw ,36px);
 }
 .word-transition {
     display: inline;
     overflow: hidden;
     position: relative;
+}
+.word-transition {
+    position: relative;
+    display: inline;
+    overflow: hidden;
+}
+.word-transition .animated-text {
+    position: absolute;
+    transform: translateY(0);
+    transition: opacity 1s, transform 1s;
+    color: #513188;
+}
+.word-transition .animated-text.slide-out {
+    opacity: 0;
+    transform: translateY(-20%);
+}
+
+@media (orientation: portrait) {
+    .static-text {
+        display: none;
+    }
 }

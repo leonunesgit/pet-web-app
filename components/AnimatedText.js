@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AnimatedText = () => {
     const [currentWordIndex, setCurrentWordIndex ] = useState(0);
     const [slideOut, setSlideOut] = useState('');
     const words = ['pet', 'amigo'];
-    const transitionInterval = 5000;
+    const transitionInterval = 4000;
 
-    //Todo: Set here the algorighm on the next class
+    useEffect(() => {
+        const intervalId = setInterval(transitionWord, transitionInterval);
+
+        return () => {
+            clearInterval(intervalId);
+        }
+    }, [currentWordIndex]);
+
+    const transitionWord = () => {
+        const nextWordIndex = (currentWordIndex + 1) % words.length;
+        setSlideOut('slide-out');
+        setTimeout(() => {
+            setCurrentWordIndex(nextWordIndex);
+            setSlideOut('');
+        }, 1000);
+    }
 
     return (
         <h2 className="static-text">
             Adote um&nbsp;
             <span className="word-transition">
-                <span className={`animated-text ${slideOut}`}></span>
+                <span className={`animated-text ${slideOut}`}>{words[currentWordIndex]}</span>
             </span>
         </h2>
     )

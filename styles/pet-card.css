@@ -1,0 +1,37 @@
+.card-pet-container {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-pet {
+    position: absolute;
+}
+.card-pet.type {
+    top: 25px;
+    left: 25px;
+}
+.card-pet.img {
+    top: 60px;
+    left: 150px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.card-pet.type-text {
+    top: 110px;
+    left: 20px;
+    font-size: 18px;
+    width: 90px;
+    max-width: 90px;
+}
+.card-pet.gender-symbol {
+    top: 70px;
+    left: 90px;
+    font-family: Impact;
+    font-weight: bold;
+    font-size: 28px;
+    color: #555;
+}
