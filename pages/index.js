@@ -1,11 +1,11 @@
-import Card from "@/components/Card";
+import GridSection from "@/components/GridSection";
 import HeroMainCard from "@/components/HeroMainCard";
 
 const App = () => {
     return (
         <>
-            {/* <HeroMainCard /> */}
-            <Card />
+            <HeroMainCard />
+            <GridSection />
         </>
     );
 }

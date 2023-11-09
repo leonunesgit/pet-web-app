@@ -10,28 +10,49 @@
 }
 .card-pet.type {
     top: 25px;
-    left: 25px;
+    left: 24px;
 }
 .card-pet.img {
-    top: 60px;
-    left: 150px;
-    width: 80px;
-    height: 80px;
+    top: 63px;
+    left: 130px;
+    width: 85px;
+    height: 85px;
     object-fit: cover;
     border-radius: 10px;
 }
 .card-pet.type-text {
     top: 110px;
-    left: 20px;
+    left: 30px;
     font-size: 18px;
     width: 90px;
     max-width: 90px;
 }
+.card-pet.text {
+    top: 150px;
+    left: 35px;
+    font-size: 14px;
+}
+.card-pet.text p {
+    margin-bottom: 4px;
+}
 .card-pet.gender-symbol {
     top: 70px;
-    left: 90px;
+    left: 95px;
     font-family: Impact;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 26px;
     color: #555;
+}
+.card-pet.btn {
+    top: 250px;
+    left: 135px;
+    background-color:#8293D2;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #eaeaea;
+}
+.card-pet.btn:hover {
+    cursor: pointer;
+    background-color: #8f7fe8;
 }
