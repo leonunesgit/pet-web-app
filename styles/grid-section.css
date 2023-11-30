@@ -6,6 +6,10 @@
     width: 100%;
 }
 .filter-section-out {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
     background-color: #2C2437;
 }
 .cards-section {

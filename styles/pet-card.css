@@ -11,6 +11,7 @@
 .card-pet.type {
     top: 25px;
     left: 24px;
+    height: 45px;
 }
 .card-pet.img {
     top: 63px;

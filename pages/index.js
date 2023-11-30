@@ -13,7 +13,7 @@ const App = () => {
                 return response.json();
             })
             .then(data => {
-                console.log(Object.values(data.pets));
+                // console.log(Object.values(data.pets));
                 setDataRes(data);
             })
             .catch(error => {
@@ -24,7 +24,7 @@ const App = () => {
     return (
         <>
             <HeroMainCard />
-            <GridSection dbData={dataRes}/>
+            {dataRes && <GridSection dbData={dataRes}/>}
         </>
     );
 }

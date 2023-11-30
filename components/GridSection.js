@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import DropdownFilter from "./Dropdown";
+import CheckboxFilter from "./CheckboxFilter";
+import ButtonFilter from "./ButtonFilter";
 
 const GridSection = ({ dbData }) => {
     const dataDbRes = dbData;
@@ -53,18 +56,67 @@ const GridSection = ({ dbData }) => {
         return true;
     });
 
+    const addItem = (item, filterType) => {
+        switch(filterType) {
+            case 'Age': setSelectedAge((prevSelectedAge) => [...prevSelectedAge, item]); break;
+            case 'Type': setSelectedType((prevSelectedType) => [...prevSelectedType, item]);break;
+            default: break;
+        }
+    }
+
+    const removeItem = (itemToRemove, filterType) => {
+        switch(filterType) {
+            case 'Age': setSelectedAge((prevSelectedAge) => prevSelectedAge.filter(item => item !== itemToRemove)); break;
+            case 'Type': setSelectedType((prevSelectedType) => prevSelectedType.filter(item => item !== itemToRemove)); break;
+            default: break;
+        }
+    }
+
+    const handleFilterChange = (selectedOption, filterType) => {
+        switch(filterType) {
+            case 'Type':
+                {
+                    for(const animal in selectedOption) {
+                        if(selectedOption[animal]) {
+                            addItem(animal, filterType);
+                        } else {
+                            removeItem(animal, filterType);
+                        }
+                    }
+                }; break;
+            case 'Age':
+                {
+                   for(const index in selectedOption) {
+                    if(selectedOption[index]) {
+                        addItem(uniqueAge[index], filterType);
+                    } else {
+                        removeItem(uniqueAge[index], filterType);
+                    }
+                   }
+                }; break;
+            case 'Breed':
+                {
+                    setSelectedBreed(uniqueBreed[selectedOption]);
+                }; break;
+            case 'Location':
+                {
+                    setSelectedLocalization(uniqueLocation[selectedOption]);
+                }; break;
+        }
+    }
+
     return(
         <div className="grid-section">
-            <div className="filter-section-out"></div>
+            <div className="filter-section-out">
+                {/* <ButtonFilter title={'Pet'} options={uniqueType} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Type') } /> */}
+                <CheckboxFilter title={'Age'} options={uniqueAge} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Age') } />
+                <DropdownFilter title={'Raça'} options={uniqueBreed} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Breed') } />
+                <DropdownFilter title={'Localização'} options={uniqueLocation} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Location') } />
+            </div>
             <div className="cards-section">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {filteredPets.map((pet, index) => (
+                    <Card key={index} petData={pet}/>
+                ))}
             </div>
         </div>
     )

@@ -1,16 +1,33 @@
-const Card = () => {
+const Card = ({ petData }) => {
+
+    console.log(petData);
+
+    const url = petData.img_url;
+    const svgUrl = petData.type.toLowerCase() === 'cat'
+    ? '/cat.svg'
+    : petData.type.toLowerCase() === 'dog'
+    ? '/dog.svg'
+    : '/other.svg';
+    const age = petData.age <= 1
+    ? '0-1 ano'
+    : petData.age > 1 && petData.age <= 3
+    ? '1-3 anos'
+    : 'mais de 3 anos';
+    const gender = petData.gender.toLowerCase() === 'male'
+    ? '♂'
+    : '♀';
 
     return (
         <div className="card-pet-container">
-            <img className="card-pet type" src="/dog.svg" alt="type-img"></img>
-            <img className="card-pet img" src="/dog.jpg" alt="pet-img"></img>
-            <h3 className="card-pet type-text">Cachorro</h3>
-            <span className="card-pet gender-symbol">♀</span>
+            <img className="card-pet type" src={svgUrl} alt="type-img"></img>
+            <img className="card-pet img" src={url} alt="pet-img"></img>
+            <h3 className="card-pet type-text">{petData.type}</h3>
+            <span className="card-pet gender-symbol">{gender}</span>
             <div className="card-pet text">
-                <p>Nome: Dough</p>
-                <p>Raça: S.R.D.</p>
-                <p>Idade: 2 anos</p>
-                <p>Localização: Santo André/SP</p>
+                <p>Nome: {petData.name}</p>
+                <p>Raça: {petData.breed}</p>
+                <p>Idade: {age}</p>
+                <p>Localização: {petData.location}</p>
             </div>
             <button className="card-pet btn">Conheça</button>
             <svg width="225" height="290" viewBox="0 0 225 293" fill="none" xmlns="http://www.w3.org/2000/svg">
