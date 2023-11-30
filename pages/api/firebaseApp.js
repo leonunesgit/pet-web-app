@@ -1,8 +1,8 @@
 import admin from 'firebase-admin';
 
 const serviceAccount = {
-    
-}
+
+  }
 
 if(!admin.apps.length) {
     admin.initializeApp({
