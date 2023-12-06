@@ -108,10 +108,12 @@ const GridSection = ({ dbData }) => {
     return(
         <div className="grid-section">
             <div className="filter-section-out">
-                <ButtonFilter title={'Pet'} options={uniqueType} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Type') } />
-                <CheckboxFilter title={'Age'} options={uniqueAge} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Age') } />
-                <DropdownFilter title={'Raça'} options={uniqueBreed} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Breed') } />
-                <DropdownFilter title={'Localização'} options={uniqueLocation} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Location') } />
+                <div className="filter-section">
+                    <ButtonFilter title={'Pet'} options={uniqueType} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Type') } />
+                    <CheckboxFilter title={'Age'} options={uniqueAge} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Age') } />
+                    <DropdownFilter title={'Raça'} options={uniqueBreed} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Breed') } />
+                    <DropdownFilter title={'Localização'} options={uniqueLocation} onChange={(selectedOption) => handleFilterChange(selectedOption, 'Location') } />
+                </div>
             </div>
             <div className="cards-section">
                 {filteredPets.map((pet, index) => (

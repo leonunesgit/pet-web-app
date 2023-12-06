@@ -1,0 +1,35 @@
+.button-filter-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0;
+}
+.filter-title {
+    color: white;
+    margin-bottom: 10px;
+}
+.button-filter {
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: 0.2s scale ease-in-out;
+    border: 2px transparent;
+    background-color: rgb(240, 240, 240);
+}
+.button-filter.active {
+    background-color: white;
+    border: 2px solid rgb(159, 116, 202);
+    scale: 1.1;
+}
+.button-filter:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+.button-svg-filter {
+    width: 30px;
+    height: auto;
+}

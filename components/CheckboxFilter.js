@@ -14,7 +14,7 @@ const CheckboxFilter = ({ title, options, onChange }) => {
     return (
         <>
             <h2 className="filter-title">{title}</h2>
-            <div className="dropdown-filter-container">
+            <div className="checkbox-filter-container">
                 {Object.keys(options).map((option) => (
                     <label htmlFor={option} key={option} className="check-filter-label">
                         <input

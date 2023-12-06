@@ -1,0 +1,30 @@
+.checkbox-filter-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: max-content;
+}
+.check-filter-checkbox {
+    appearance: none;
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-filter-checkbox:checked {
+    border: 3px solid white;
+    background-color: rgb(44, 36, 55);
+}
+.check-filter-label {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}

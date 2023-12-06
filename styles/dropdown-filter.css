@@ -1,0 +1,23 @@
+.dropdown-filter-container {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.dropdown-filter-dropdown {
+    padding: 4px 8px;
+    border-radius: 5px;
+    width: clamp(165px, 85%, 220px);
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+.dropdown-filter-dropdown:hover {
+    border-color: white;
+}
+.dropdown-filter-option {
+    color: #222;
+}
+.dropdown-filter-option:checked {
+    font-weight: bold;
+}
